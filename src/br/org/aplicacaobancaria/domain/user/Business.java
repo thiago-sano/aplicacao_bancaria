@@ -24,6 +24,6 @@ public class Business extends Client{
 
     @Override
     public String toString() {
-        return String.format("Nome: %s - Email: %s - CNPJ: %s - Capital: %,.2f - Tipo: %s", getName(), getEmail(), getId(), getStatedCapital(), getClientType().getNome());
+        return String.format("Nome: %-15s | Email: %-30s | CNPJ: %-19s | Tipo: %-10s | Capital: %,.2f", getName(), getEmail(), getId(), getClientType().getNome(), getStatedCapital());
     }
 }
