@@ -76,6 +76,7 @@ Transaction --|> LimitTransaction
     }
     namespace bank{
         class Branch{
+            - name : String
             - number : String
         }
 
