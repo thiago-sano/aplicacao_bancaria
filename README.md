@@ -34,36 +34,36 @@ A aplicação deve conter um menu via terminal para seleção da operação dese
 ### Diagrama de classe: ###
 ```mermaid
 classDiagram
-Client <|-- Personal
-Client <|-- Business
-Account <|-- SavingsAccount
-Account <|-- CheckingAccount
-Account <|-- PayrollAccount
-Client "1" *--> "1..*" Account : client
-Client "1..*" --> "1" BankingSystem : client
+    Client <|-- Personal
+    Client <|-- Business
+    Account <|-- SavingsAccount
+    Account <|-- CheckingAccount
+    Account <|-- PayrollAccount
+    Client "1" *--> "1..*" Account : client
+    Client "1..*" --> "1" BankingSystem : client
 
 
-Branch "1" <--o "1..*" Account
-BankingSystem "1" <--o "1..*" Branch : branch
-BankingSystem "1" <-- "1..*" Account : account
-Account "1" --> "1..*" Transaction : account
+    Branch "1" <--o "1..*" Account
+    BankingSystem "1" <--o "1..*" Branch : branch
+    BankingSystem "1" <-- "1..*" Account : account
+    Account "1" --> "1..*" Transaction : account
 
-Transaction --|> WithdrawTransaction
-Transaction --|> DepositTransaction
-Transaction --|> TransferTransaction
-Transaction --|> LimitTransaction
+    Transaction --|> WithdrawTransaction
+    Transaction --|> DepositTransaction
+    Transaction --|> TransferTransaction
+    Transaction --|> LimitTransaction
 
 
     namespace user{
         class Client{
-        <<abstract>>
-        - name : String
-        - email : String
-        - id : String
-        - clientType : ClientType
+            <<abstract>>
+            - name : String
+            - email : String
+            - id : String
+            - clientType : ClientType
         }
         class Personal{
-            
+
         }
         class Business{
             - statedCapital: Double
@@ -76,8 +76,8 @@ Transaction --|> LimitTransaction
     }
     namespace bank{
         class Branch{
-            - name : String
             - number : String
+            - name : String
         }
 
         class Account {
@@ -105,22 +105,22 @@ Transaction --|> LimitTransaction
         }
         class BankingSystem{
             + registerClient(client : Client) void
-            + listClients() List
+            + listClients() void
             + registerBranch(branch : Branch) void
-            + listBranches() List
+            + listBranches() void
             + registerAccount(account : Account) void
             + listAccounts(number : String) List
         }
     }
 
     namespace transaction{
-        class Transaction{  
+        class Transaction{
             - amount : Double
             - transactionDate : LocalDateTime
             - transactionType : TransactionType
             - sender : Account
             - receiver : Account
-            
+
             + checkTransaction(amount : Double, sender : Account, receiver : Account, type : TransactionType) boolean
             + makeTransaction(amount : Double, sender : Account, receiver : Account, requestDate : LocalDateTime, scheduledDate : LocalDateTime, type : TransactionType) void
             + transactionStatement (amount : Double, account : Account, scheduledDate : LocalDateTime) List
