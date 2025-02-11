@@ -28,4 +28,10 @@ public class CheckingAccount extends Account{
     public void setAvailableLimit(Double availableLimit) {
         this.availableLimit = availableLimit;
     }
+
+    @Override
+    public String toString() {
+        return String.format("AGENCIA: %s | CONTA: %s | CPF/CNPJ: %-15s | TIPO: %s | SALDO: %,.2f | LIMITE: R$%,.2f | LIMITE DISPONIVEL: R$%,.2f", getBranch().getNumber(), getAccountNumber(), getClient().getId(), getAccountType().getNome(), getBalance(), getLimit(), getAvailableLimit());
+
+    }
 }
