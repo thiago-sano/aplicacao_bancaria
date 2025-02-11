@@ -7,7 +7,7 @@ import java.util.*;
 public class BankingSystem {
 
     Map<String, String> branches = new TreeMap<>();
-    List<Client> clients = new ArrayList<>();
+    Set<Client> clients = new HashSet<>();
 
     public BankingSystem() {
     }
