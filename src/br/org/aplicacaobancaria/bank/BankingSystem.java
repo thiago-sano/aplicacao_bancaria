@@ -7,6 +7,7 @@ import java.util.*;
 public class BankingSystem {
 
     Map<String, String> branches = new TreeMap<>();
+    List<Account> accounts = new ArrayList<>();
     Set<Client> clients = new HashSet<>();
 
     public BankingSystem() {
@@ -33,9 +34,12 @@ public class BankingSystem {
     }
 
     public void registerAccount(Account account){
+        accounts.add(account);
     }
 
-    public List<Account> listAccounts(String number){
-        return null;
+    public void listAccounts(){
+        for (Account account : accounts){
+            System.out.println(account);
+        }
     }
 }
