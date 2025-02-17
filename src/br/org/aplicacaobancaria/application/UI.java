@@ -51,7 +51,7 @@ public class UI {
         int option = 0;
         while (option != 3){
             option = 0;
-            System.out.println("\nACESSO DE AGENCIA");
+            System.out.println("\nMENU PRINCIPAL / ACESSO DE AGENCIA");
             System.out.println("1 - CADASTRAR CONTA");
             System.out.println("2 - ALTERAR LIMITE");
             System.out.println("3 - VOLTAR");
@@ -59,19 +59,19 @@ public class UI {
             option = readMenuOption();
             switch (option){
                 case 1: {
-                    System.out.println("\nCADASTRO DE CONTA");
+                    System.out.println("\n-> CADASTRO DE CONTA");
                     break;
                 }
                 case 2: {
-                    System.out.println("\nALTERACAO DE LIMITE");
+                    System.out.println("\n-> ALTERACAO DE LIMITE");
                     break;
                 }
                 case 3: {
-                    System.out.println("VOLTAR\n");
+                    System.out.println("<- VOLTAR\n");
                     break;
                 }
                 default:{
-                    System.out.println("OPCAO INVALIDA\n");
+                    System.out.println("!!! OPCAO INVALIDA !!!\n");
                     break;
                 }
             }
@@ -84,7 +84,7 @@ public class UI {
         int option = 0;
         while (option != 7){
             option = 0;
-            System.out.println("\nACESSO DE CLIENTES");
+            System.out.println("\nMENU PRINCIPAL / ACESSO DE CLIENTES");
             System.out.println("1 - EXIBIR INFORMACOES DA CONTA");
             System.out.println("2 - DEPOSITO");
             System.out.println("3 - SAQUE");
@@ -96,35 +96,35 @@ public class UI {
             option = readMenuOption();
             switch (option) {
                 case 1: {
-                    System.out.println("\nINFORMACOES DA CONTA");
+                    System.out.println("\n-> INFORMACOES DA CONTA");
                     break;
                 }
                 case 2: {
-                    System.out.println("\nDEPOSITO");
+                    System.out.println("\n-> DEPOSITO");
                     break;
                 }
                 case 3: {
-                    System.out.println("\nSAQUE");
+                    System.out.println("\n-> SAQUE");
                     break;
                 }
                 case 4: {
-                    System.out.println("\nALTERACAO DE LIMITE");
+                    System.out.println("\n-> ALTERACAO DE LIMITE");
                     break;
                 }
                 case 5: {
-                    System.out.println("\nTRANSFERENCIA");
+                    System.out.println("\n-> TRANSFERENCIA");
                     break;
                 }
                 case 6: {
-                    System.out.println("\nEXTRATO");
+                    System.out.println("\n-> EXTRATO");
                     break;
                 }
                 case 7: {
-                    System.out.println("VOLTAR\n");
+                    System.out.println("<- VOLTAR\n");
                     break;
                 }
                 default: {
-                    System.out.println("OPCAO INVALIDA\n");
+                    System.out.println("!!! OPCAO INVALIDA !!!\n");
                     break;
                 }
             }
