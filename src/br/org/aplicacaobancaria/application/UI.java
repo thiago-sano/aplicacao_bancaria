@@ -16,42 +16,41 @@ public class UI {
         System.out.flush();
     }
 
-    public static void printMainMenu() {
+    public static int printMainMenu() {
         clearScreen();
+
         int option = 0;
-        while (option != 3){
+        while (option != 3) {
             System.out.println("MENU PRINCIPAL");
             System.out.println("1 - ACESSO AGENCIA");
             System.out.println("2 - ACESSO CLIENTE");
             System.out.println("3 - SAIR");
             System.out.print("Digite uma opcao: ");
             option = readMenuOption();
-            switch (option){
-                case 1: {
-                    printBranchMenu();
-                    return;
-                }
-                case 2: {
-                    printClientMenu();
-                    return;
+            switch (option) {
+                case 1, 2: {
+                    break;
                 }
                 case 3: {
-                    System.out.println("\nATE LOGO!!");
+                    System.out.println("ATE LOGO");
                     exit(0);
                 }
-                default:{
+                default: {
                     System.out.println("OPCAO INVALIDA\n");
                     break;
                 }
             }
+            return option;
         }
+        return option;
     }
 
 
-    public static void printBranchMenu(){
+    public static int printBranchMenu(){
         clearScreen();
         int option = 0;
         while (option != 3){
+            option = 0;
             System.out.println("\nACESSO DE AGENCIA");
             System.out.println("1 - CADASTRAR CONTA");
             System.out.println("2 - ALTERAR LIMITE");
@@ -61,16 +60,15 @@ public class UI {
             switch (option){
                 case 1: {
                     System.out.println("\nCADASTRO DE CONTA");
-                    return;
+                    break;
                 }
                 case 2: {
                     System.out.println("\nALTERACAO DE LIMITE");
-                    return;
+                    break;
                 }
                 case 3: {
-                    System.out.println();
-                    printMainMenu();
-                    return;
+                    System.out.println("VOLTAR\n");
+                    break;
                 }
                 default:{
                     System.out.println("OPCAO INVALIDA\n");
@@ -78,13 +76,14 @@ public class UI {
                 }
             }
         }
-
+        return option;
     }
 
-    public static void printClientMenu(){
+    public static int printClientMenu(){
         clearScreen();
         int option = 0;
-        while (option != 3){
+        while (option != 7){
+            option = 0;
             System.out.println("\nACESSO DE CLIENTES");
             System.out.println("1 - EXIBIR INFORMACOES DA CONTA");
             System.out.println("2 - DEPOSITO");
@@ -98,32 +97,31 @@ public class UI {
             switch (option) {
                 case 1: {
                     System.out.println("\nINFORMACOES DA CONTA");
-                    return;
+                    break;
                 }
                 case 2: {
                     System.out.println("\nDEPOSITO");
-                    return;
+                    break;
                 }
                 case 3: {
                     System.out.println("\nSAQUE");
-                    return;
+                    break;
                 }
                 case 4: {
                     System.out.println("\nALTERACAO DE LIMITE");
-                    return;
+                    break;
                 }
                 case 5: {
                     System.out.println("\nTRANSFERENCIA");
-                    return;
+                    break;
                 }
                 case 6: {
                     System.out.println("\nEXTRATO");
-                    return;
+                    break;
                 }
                 case 7: {
-                    System.out.println();
-                    printMainMenu();
-                    return;
+                    System.out.println("VOLTAR\n");
+                    break;
                 }
                 default: {
                     System.out.println("OPCAO INVALIDA\n");
@@ -131,6 +129,7 @@ public class UI {
                 }
             }
         }
+        return option;
     }
 
     public static int readMenuOption(){
