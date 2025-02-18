@@ -24,6 +24,21 @@ public class BankingSystem {
         }
     }
 
+    public boolean branchLogin(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\nMENU PRINCIPAL / LOGIN DE AGENCIA");
+        System.out.print("INFORME A AGENCIA: ");
+        String number = sc.next();
+
+        boolean exists = checkBranch(number);
+        if (exists) {
+            System.out.println("A filial " + number + " existe.");
+        } else {
+            System.out.println("A filial " + number + " não existe.\n");
+        }
+        return exists;
+    }
+
     public void registerClient(Client client){
         clients.add(client);
     }
@@ -43,4 +58,9 @@ public class BankingSystem {
             System.out.println(account);
         }
     }
+
+    public boolean checkBranch(String number){
+        return branches.containsKey(number);
+    }
 }
+
