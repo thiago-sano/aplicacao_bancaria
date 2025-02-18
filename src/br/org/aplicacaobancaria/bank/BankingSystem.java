@@ -14,12 +14,13 @@ public class BankingSystem {
     }
 
     public void registerBranch(Branch branch){
-        branches.put(branch.getName(), branch.getNumber());
+        branches.put(branch.getNumber(), branch.getName());
     }
 
     public void listBranches(){
+
         for (String key : branches.keySet()){
-            System.out.println(String.format("%s : %s", key, branches.get(key).toUpperCase()));
+            System.out.println(String.format("%-5s - %s", key, branches.get(key).toUpperCase()));
         }
     }
 

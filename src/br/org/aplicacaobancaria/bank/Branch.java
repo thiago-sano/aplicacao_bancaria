@@ -1,19 +1,11 @@
 package br.org.aplicacaobancaria.bank;
 
 public class Branch {
-    private String name;
     private String number;
+    private String name;
 
-    public Branch(String name, String number) {
-        this.name = name;
+    public Branch(String number, String name) {
         this.number = number;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
     }
 
@@ -23,5 +15,13 @@ public class Branch {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
