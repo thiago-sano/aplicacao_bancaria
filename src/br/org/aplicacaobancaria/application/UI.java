@@ -1,5 +1,7 @@
 package br.org.aplicacaobancaria.application;
 
+import br.org.aplicacaobancaria.bank.Branch;
+
 import java.util.Scanner;
 
 import static java.lang.System.exit;
@@ -20,14 +22,26 @@ public class UI {
         clearScreen();
         int option = 0;
         System.out.println("MENU PRINCIPAL");
-        System.out.println("1 - ACESSO AGENCIA");
-        System.out.println("2 - ACESSO CLIENTE");
-        System.out.println("3 - SAIR");
+        System.out.println("1 - ACESSO DE BANCO"); // OK
+        System.out.println("2 - ACESSO DE AGENCIA"); //
+        System.out.println("3 - ACESSO DE CLIENTE");
+        System.out.println("4 - SAIR");
         System.out.print("Digite uma opcao: ");
         option = readMenuOption();
         return option;
     }
 
+    public static int printBankMenu(){
+        clearScreen();
+        int option = 0;
+        System.out.println("\nMENU PRINCIPAL / ACESSO DE BANCO");
+        System.out.println("1 - CADASTRAR AGENCIA");
+        System.out.println("2 - LISTAR AGENCIA");
+        System.out.println("3 - VOLTAR");
+        System.out.print("Digite uma opcao: ");
+        option = readMenuOption();
+        return option;
+    }
 
     public static int printBranchMenu(){
         clearScreen();
@@ -57,6 +71,14 @@ public class UI {
         return option;
     }
 
+    public static Branch printBranchRegister(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("NUMERO DA AGENCIA: ");
+        String branchNumber = sc.next();
+        System.out.print("NOME DA AGENCIA: ");
+        String branchName = sc.next();
+        return new Branch(branchNumber, branchName);
+    }
     public static int readMenuOption(){
         Scanner sc = new Scanner(System.in);
         return sc.nextInt();
